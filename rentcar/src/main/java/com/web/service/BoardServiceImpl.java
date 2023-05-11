@@ -43,7 +43,8 @@ public class BoardServiceImpl implements BoardServiceInterface{
 	
 	@Override
 	public void deleteBoard(int idx) {
-		boardRepository.deleteBoardByIdx(idx);
+//		boardRepository.deleteBoardByIdx(idx);
+		boardRepository.delete(idx);
 	}
 	
 }

@@ -26,7 +26,7 @@ public class IndexController {
 	
 	@Autowired
 	private BoardServiceImpl s;
-	
+	 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String root() {
 		return "index";
@@ -85,8 +85,8 @@ public class IndexController {
 		return "redirect:view?idx=" + idx;
 	} 
 	
-    @RequestMapping("/deleteBoard")
-    public String deleteBoardByIdx(@RequestParam("idx") int idx) {
+    @RequestMapping(value="/deleteBoard", method=RequestMethod.POST)
+    public String deleteBoard(@RequestParam("idx") int idx) {
         s.deleteBoard(idx);
         return "redirect:/";
     }
