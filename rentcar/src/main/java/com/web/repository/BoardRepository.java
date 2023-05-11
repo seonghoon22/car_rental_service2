@@ -8,3 +8,4 @@ import com.web.domain.Board;
 public interface BoardRepository extends JpaRepository<Board, Integer>{
 	 void deleteBoardByIdx(int Idx);
 }
+ 

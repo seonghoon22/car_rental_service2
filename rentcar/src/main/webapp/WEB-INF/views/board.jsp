@@ -41,7 +41,7 @@ $(document).ready(function() {
                 $("#deleteBtn" + item.idx).click(function() {
                     var idx = item.idx;
                     $.ajax({
-                        url: "deleteBoardByIdx",
+                        url: "deleteBoard",
                         type: "POST",
                         data: { idx: idx },
                         success: function(result) {
@@ -57,7 +57,7 @@ $(document).ready(function() {
     });
 } );
 
-
+ 
 </script>
 </head>
 <body>
