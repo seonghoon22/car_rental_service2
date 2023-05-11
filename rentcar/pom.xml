@@ -71,6 +71,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.32</version>
 		</dependency>
 		
 
@@ -88,7 +89,12 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 		
-		
+		<!--BootStrap -->		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>5.2.3</version>
+		</dependency>
 		
 		<!-- Tiles -->
 		<dependency>
@@ -120,6 +126,7 @@
 		
 		
 	</build>
+
 
 	<packaging>war</packaging>
 </project>
