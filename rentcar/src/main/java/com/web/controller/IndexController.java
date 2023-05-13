@@ -8,18 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.google.gson.Gson;
 import com.web.domain.Board;
 import com.web.domain.Reply;
-import com.web.service.*;
+import com.web.service.BoardServiceImpl;
 
 @Controller
 public class IndexController {
@@ -83,9 +81,9 @@ public class IndexController {
 			@RequestParam("contents")String contents) {
 		s.addReply(new Reply(0, idx, replyIdx, contents));
 		return "redirect:view?idx=" + idx;
-	} 
+	}
 	 
-    @RequestMapping(value="/deleteBoard", method=RequestMethod.POST)
+    @GetMapping(value="/deleteBoard")
     public String deleteBoard(@RequestParam("idx") int idx) {
         s.deleteBoard(idx);
         return "redirect:/";
