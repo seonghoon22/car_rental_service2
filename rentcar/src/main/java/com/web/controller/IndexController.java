@@ -85,7 +85,7 @@ public class IndexController {
 		return "redirect:view?idx=" + idx;
 	} 
 	 
-    @RequestMapping(value="/deleteBoard", method=RequestMethod.POST)
+    @RequestMapping(value="/deleteBoard", method=RequestMethod.GET)
     public String deleteBoard(@RequestParam("idx") int idx) {
         s.deleteBoard(idx);
         return "redirect:/";
