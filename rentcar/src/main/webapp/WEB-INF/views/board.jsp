@@ -42,10 +42,10 @@ $(document).ready(function() {
                     var idx = item.idx;
                     $.ajax({
                         url: "deleteBoard",
-                        type: "POST",
+                        type: "GET",
                         data: { idx: idx },
                         success: function(result) {
-                            location.reload();
+                           location.href="board"
                         },
                         error: function(xhr, status, error) {
                             console.error(xhr.responseText);
