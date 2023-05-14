@@ -82,8 +82,8 @@ public class IndexController {
 		s.addReply(new Reply(0, idx, replyIdx, contents));
 		return "redirect:view?idx=" + idx;
 	}
-	 
-    @GetMapping(value="/deleteBoard")
+    @RequestMapping(value="/deleteBoard", method=RequestMethod.GET)
+
     public String deleteBoard(@RequestParam("idx") int idx) {
         s.deleteBoard(idx);
         return "redirect:/";
