@@ -21,7 +21,7 @@ public class LoginController {
        public String login() {
            return "login";
        }
-
+ 
        @PostMapping("/login")
        public String loginId(@ModelAttribute User user) {
            if(loginService.login(user)){
