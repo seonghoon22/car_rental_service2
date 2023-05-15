@@ -45,7 +45,7 @@ $(document).ready(function() {
                         type: "GET",
                         data: { idx: idx },
                         success: function(result) {
-                        	location.href = "board";
+                           location.href="board"
                         },
                         error: function(xhr, status, error) {
                             console.error(xhr.responseText);
