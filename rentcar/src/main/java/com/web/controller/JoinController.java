@@ -21,7 +21,7 @@ public class JoinController {
 	private BCryptPasswordEncoder cryptPassEnc;
 	@Autowired
 	private JoinService service;
-	
+	 
 	
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public String index() {
