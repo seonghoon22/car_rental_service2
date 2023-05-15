@@ -1,4 +1,5 @@
 package com.web.domain;
+
 import javax.persistence.*;
 
 @Entity

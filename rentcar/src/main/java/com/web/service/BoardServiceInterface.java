@@ -1,6 +1,6 @@
 package com.web.service;
 import java.util.List;
-import 	com.web.domain.*;
+import com.web.domain.*;
 
 public interface BoardServiceInterface {
 	public void addBoard(Board b);
