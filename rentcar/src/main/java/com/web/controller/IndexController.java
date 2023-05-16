@@ -23,8 +23,6 @@ import com.web.service.BoardServiceImpl;
 public class IndexController {
 	
 	
-	
-	
 	@Autowired
 	private BoardServiceImpl s;
 	 
