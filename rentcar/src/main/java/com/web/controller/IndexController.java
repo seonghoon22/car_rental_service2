@@ -22,17 +22,23 @@ import com.web.service.BoardServiceImpl;
 @Controller
 public class IndexController {
 	
+	
 	@Autowired
 	private BoardServiceImpl s;
 	 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String root() {
 		return "index";
+		
+		
+		
 	}
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String index() {
 		return "index";
 	}
+	
+	
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public String board() {
 		return "board";
