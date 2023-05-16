@@ -33,6 +33,8 @@ public class IndexController {
 	public String index() {
 		return "index";
 	}
+	
+	
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public String board() {
 		return "board";
