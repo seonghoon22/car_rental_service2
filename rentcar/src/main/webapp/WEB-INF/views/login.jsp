@@ -14,14 +14,13 @@
 </head>
 <body>
 
-<form id="loginForm" action="" method="post">
-
+<form id="loginForm" method="post">
   <div class="container">
-    <label for="uname"><b>UserID${data }</b></label>
-    <input type="text" placeholder="아이디를 입력하세요." id="mem_id" name="mem_id" required>
+    <label for="name"><b>UserID${data}</b></label>
+    <input type="text" placeholder="아이디를 입력하세요." id="id" name="id" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="비밀번호를 입력하세요." id="mem_pw" name="mem_pw" required>
+    <input type="password" placeholder="비밀번호를 입력하세요." id="password" name="password" required>
 
     <button type="submit">Login</button>
     <label>
@@ -30,7 +29,6 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="/member/forgotPW">password?</a></span>
   </div>
 </form>

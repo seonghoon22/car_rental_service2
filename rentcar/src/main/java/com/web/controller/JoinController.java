@@ -1,7 +1,6 @@
 package com.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +15,6 @@ import com.web.service.JoinService;
 
 @Controller
 public class JoinController {
-
-	@Autowired
-	private BCryptPasswordEncoder cryptPassEnc;
 	@Autowired
 	private JoinService service;
 	 
@@ -27,12 +23,11 @@ public class JoinController {
 	public String index() {
 		return "join";
 	}
-	
+	 
 	
 	// 회원가입
 	@PostMapping("/join")
 	public String joinOk(User user, RedirectAttributes rttr) throws Exception{
-		user.setPassword(cryptPassEnc.encode(user.getPassword()));
 		service.join(user);
 		return "redirect:/login";
 	}

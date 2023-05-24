@@ -1,14 +1,11 @@
 package com.web.domain;
-
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.data.annotation.CreatedDate;
+
 
 
 @Entity
@@ -35,10 +32,7 @@ public class User{
    
    @Column(name="phone",nullable=false,length=13)
    private String phone;
-   
-//   @Column(name="subdate",nullable=false)
-//   @CreatedDate
-//   private LocalDateTime subdate;
+
 
 public int getUser_no() {
 	return user_no;
@@ -95,13 +89,5 @@ public String getPhone() {
 public void setPhone(String phone) {
 	this.phone = phone;
 }
-
-//public LocalDateTime getSubdate() {
-//	return subdate;
-//}
-//
-//public void setSubdate(LocalDateTime subdate) {
-//	this.subdate = subdate;
-//}
   
 }

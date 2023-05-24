@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.web.domain.User;
 import com.web.service.LoginService;
-
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
     @Autowired
-       private LoginService loginService;
-
+    private LoginService loginService;
+    
+    
        @GetMapping("/login")
        public String login() {
            return "login";
@@ -25,8 +25,8 @@ public class LoginController {
        @PostMapping("/login")
        public String loginId(@ModelAttribute User user) {
            if(loginService.login(user)){
-               return "redirect:/";
+               return "index";
            }
-           return "login";
+           return "join";
        }
 }
