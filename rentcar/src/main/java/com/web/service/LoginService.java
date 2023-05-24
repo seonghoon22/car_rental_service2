@@ -13,9 +13,8 @@ import lombok.RequiredArgsConstructor;
 public class LoginService {
    @Autowired
     private UserRepository userRepository;
-
+   
     public boolean login(User user) {
-
         User findUser = userRepository.findById(user.getId());
         if(findUser == null){
             return false;
