@@ -3,7 +3,10 @@ package com.web.domain;
 
 import javax.persistence.*;
 
- 
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="car")
@@ -21,9 +24,15 @@ public class Car {
    @Column(name="price",nullable=false)
    private int price;
    
-   @Column(name="imgpath",nullable=false)
+   @Column(name="imgpath",nullable=true)
    private String imgpath;
    
+   @Transient
+   private MultipartFile file;
+   
+   public Car(long carNo) {
+	   this.car_no = carNo;
+   }
    
    
    public Long getCar_no() {
@@ -44,6 +53,14 @@ public class Car {
 
    public String getModel_year() {
       return model_year;
+   }
+   
+   public MultipartFile getFile() {
+	   return file;
+   }
+   
+   public void setFile(MultipartFile part) {
+	   this.file = part;
    }
 
    public void setModel_year(String model_year) {
