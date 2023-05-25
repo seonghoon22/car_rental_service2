@@ -62,7 +62,7 @@
                                         <input type="text" id="full_name" class="form-control" name="id">
                                     </div>
                                 </div>
-
+ 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
