@@ -26,13 +26,13 @@
                <div class="logo"><a href="index">
                   Home</a>
                </div>
+               
+                 
                <div class="menu">
                   <ul>
                      <li><a href="login">Login</a></li>
-                     <li><a href="#">Blog</a></li>
-                     <li><a href="#">Contact</a></li>
-                     <li><a href="#">Contact</a></li>
-                     <li><a href="#">Contact</a></li>
+                     <li><a href="logout">Logout</a></li>
+                     <li><a href="board">Review</a></li>
                   </ul>
                </div>
             </nav>
