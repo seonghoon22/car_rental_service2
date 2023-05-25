@@ -31,6 +31,7 @@ public class LoginController {
            if(loginService.login(user)){
         	   HttpSession session = request.getSession();
         	   session.setAttribute("userid", user.getId());
+        	   System.out.println("Session Created! id : " + session.getAttribute("userid"));
                return "index";
            }
            return "login";
