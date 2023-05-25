@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="static/css/styles.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     </head>
     <body>
     
@@ -24,7 +24,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="login">로그인</a></li>
-                        <li class="nav-item"><a class="nav-link" href="join">회원가입</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="join">회원가입</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="board">게시판</a></li>
                         
                     </ul>

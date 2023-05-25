@@ -27,6 +27,6 @@ public class LoginController {
            if(loginService.login(user)){
                return "index";
            }
-           return "join";
+           return "login";
        }
 }
