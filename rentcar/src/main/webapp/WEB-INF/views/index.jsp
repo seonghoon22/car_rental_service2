@@ -24,7 +24,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="login">로그인</a></li>
-                        <li class="nav-item"><a class="nav-link" href="logout">로그아웃</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index">로그아웃</a></li>
                         <li class="nav-item"><a class="nav-link" href="join">회원가입</a></li>
                         <li class="nav-item"><a class="nav-link" href="board">게시판</a></li>
                         
