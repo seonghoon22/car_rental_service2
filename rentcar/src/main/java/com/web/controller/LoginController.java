@@ -33,6 +33,6 @@ public class LoginController {
         	   session.setAttribute("userid", user.getId());
                return "index";
            }
-           return "join";
+           return "login";
        }
 }

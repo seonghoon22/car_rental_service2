@@ -28,7 +28,7 @@ public class JoinController {
 	@PostMapping("/join")
 	public String joinOk(User user, RedirectAttributes rttr) throws Exception{
 		service.join(user);
-		return "redirect:/login";
+		return "redirect:/";
 	}
 	
     @GetMapping("/checkDuplicateId")
