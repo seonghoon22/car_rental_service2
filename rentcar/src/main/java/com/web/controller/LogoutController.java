@@ -16,23 +16,12 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class LoginController {
-    @Autowired
-    private LoginService loginService;
-    
-    
-       @GetMapping("/login")
-       public String login() {
-           return "login";
-       }
- 
-       @PostMapping("/login")
-       public String loginId(@ModelAttribute User user, HttpServletRequest request) {
-           if(loginService.login(user)){
-        	   HttpSession session = request.getSession();
-        	   session.setAttribute("userid", user.getId());
-               return "index";
-           }
-           return "login";
-       }
+
+public class LogoutController {
+
+	    @GetMapping("/logout")
+	    public String logout(HttpSession session) {
+	        session.invalidate();
+	        return "index";
+	}
 }

@@ -68,7 +68,6 @@ public class SessionConfig implements HttpSessionListener {
 	
 	
 	private static void removeSessionForDoubleLogin(String result) {
-		// TODO Auto-generated method stub
 		System.out.println("remove result: " + result);
 		if(result != null && result.length() > 0) {
 			sessions.get(result).invalidate(); // 로그인 사용자의 세션을 소멸.
@@ -80,7 +79,6 @@ public class SessionConfig implements HttpSessionListener {
 	// 세션이 생성되었을 때 호출되어지는 이벤트 메서드. 로그인시 세션이 생성되는 것이 아니다.
 	@Override
 	public void sessionCreated(HttpSessionEvent se) {
-		// TODO Auto-generated method stub
 		System.out.println("sessionCreated: " + currentCount);
 		sessions.put(se.getSession().getId(), se.getSession());
 		
@@ -93,7 +91,6 @@ public class SessionConfig implements HttpSessionListener {
 	// 세션이 소멸되었을 때 호출되어지는 이벤트 메서드. (로그아웃, 브라우저 종료하면서 설정된 세션상태시간이 초과)
 	@Override
 	public void sessionDestroyed(HttpSessionEvent se) {
-		// TODO Auto-generated method stub
 		System.out.println("sessionDestroyed: " + currentCount);
 		
 		if(sessions.get(se.getSession().getId()) != null) {

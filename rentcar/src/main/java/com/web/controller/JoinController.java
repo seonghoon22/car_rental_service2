@@ -24,8 +24,7 @@ public class JoinController {
 		return "join";
 	}
 	 
-	
-	// 회원가입
+
 	@PostMapping("/join")
 	public String joinOk(User user, RedirectAttributes rttr) throws Exception{
 		service.join(user);
@@ -33,8 +32,9 @@ public class JoinController {
 	}
 	
     @GetMapping("/checkDuplicateId")
-    public boolean checkDuplicateId(@RequestParam("id") String id) {
-        return service.isIdDuplicated(id); 
+    public String checkDuplicateId(@RequestParam("id") String id) {
+    	boolean isDuplicate = service.isIdDuplicated(id);
+        return isDuplicate ? "true" : "false";
     }
 	
 }

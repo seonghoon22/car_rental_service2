@@ -18,35 +18,11 @@
     background: #aaa;
   }
   </style>
-
- <script>
-        $(document).ready(function() {
-            $('#id').on('input', function() {
-                var id = $(this).val();
-                if (id !== '') {
-                    $.ajax({
-                        url: 'checkDuplicateId',
-                        method: 'GET',
-                        data: { id: id },
-                        success: function(data) {
-                            if (data === 'true') {
-                                $('#idMessage').text('사용할 수 있는 아이디입니다.');
-                            } else {
-                                $('#idMessage').text('이미 사용 중인 아이디입니다.');
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error(error);
-                        }
-                    });
-                }
-            });
-        });
-    </script>
+  
 </head>
 <body>
     <h2>회원가입</h2>
-    <form action="join" method="post">
+    <form action="join" id="signupForm" method="post">
         <label for="id">아이디:</label>
         <input type="text" id="id" name="id" required>
         <span id="idMessage"></span><br>
@@ -68,5 +44,31 @@
         
         <button type="submit">가입하기</button>
     </form>
+    
+    <script>
+  const form = document.getElementById('signupForm');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+  
+    const idInput = document.getElementById('id');
+    const idMessage = document.getElementById('idMessage');
+    if (idInput.value.length < 4) {
+      idMessage.textContent = '아이디는 4자 이상이어야 합니다.';
+      return;
+    } else {
+      idMessage.textContent = '';
+    }
+
+    const passwordInput = document.getElementById('password');
+    if (passwordInput.value.length < 6) {
+      alert('비밀번호는 6자 이상이어야 합니다.');
+      return;
+    }
+
+    form.submit();
+  });
+</script>
 </body>
 </html>

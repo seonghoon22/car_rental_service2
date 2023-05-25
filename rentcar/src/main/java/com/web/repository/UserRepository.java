@@ -5,5 +5,4 @@ import com.web.domain.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 	User findById(String id);
-	boolean existsById(String id);
 }
