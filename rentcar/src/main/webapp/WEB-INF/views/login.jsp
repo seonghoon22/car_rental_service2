@@ -1,36 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script>
- let msg = "${msg}";
- if(msg == "loginFail"){
-	 alert("로그인 정보를 확인하세요.");
- }
-</script>
-</head>
-<body>
+<html lang="ko">
+  <head>
+  
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
 
-<form id="loginForm" method="post">
-  <div class="container">
-    <label for="name"><b>UserID${data}</b></label>
-    <input type="text" placeholder="아이디를 입력하세요." id="id" name="id" required>
+	<!-- All the files that are required -->
+	<link href="static/css/login.css" rel="stylesheet" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="비밀번호를 입력하세요." id="password" name="password" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <span class="psw">Forgot <a href="/member/forgotPW">password?</a></span>
-  </div>
-</form>
-</body>
+  </head>
+  <body>
+	 <div class="text-center" style="padding:50px 0">
+		<div class="logo">login</div>
+		<div class="login-form-1">
+			<form id="loginForm" class="text-left" method="post">
+				<div class="login-form-main-message"></div>
+				<div class="main-login-form">
+					<div class="login-group">
+						<div class="form-group">
+							<label for="lg_username" class="sr-only">id</label>
+							<input type="text" class="form-control" id="id" name="id" placeholder="username">
+						</div>
+						<div class="form-group">
+							<label for="lg_password" class="sr-only">password</label>
+							<input type="password" class="form-control" id="password" name="password" placeholder="password">
+						</div>
+						<div class="form-group login-group-checkbox">
+							<input type="checkbox" id="lg_remember" name="lg_remember">
+							<label for="lg_remember">Remember</label>
+						</div>
+					</div>
+					<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+				</div>
+				<div class="etc-login-form">
+					<!-- <p>forgot your password? <a href="#">click here</a></p> -->
+					<p>회원이 아니신가요?&nbsp <a href="join"><b>회원가입하기<b></B></a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- <script src="static/login.js"></script> -->
+  </body>
 </html>
