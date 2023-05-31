@@ -1,7 +1,10 @@
 package com.web.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.web.domain.User;
+import com.web.dto.userDTO;
 import com.web.service.JoinService;
 
 
@@ -26,13 +29,16 @@ public class JoinController {
 	 
 
 	@PostMapping("/join")
-	public String joinOk(User user, RedirectAttributes rttr) throws Exception{
-		service.join(user);
+	public String joinOk(@Valid userDTO userDto, BindingResult bindingResult, RedirectAttributes rttr) throws Exception{
+		if(bindingResult.hasErrors()) {
+			return "join";
+		}
+		service.join(userDto);
 		return "redirect:/";
 	}
 	
     @GetMapping("/checkDuplicateId")
-    public String checkDuplicateId(@RequestParam("id") String id) {
+    public String checkDuplicateId(@Valid @RequestParam("id") String id) {
     	boolean isDuplicate = service.isIdDuplicated(id);
         return isDuplicate ? "true" : "false";
     }

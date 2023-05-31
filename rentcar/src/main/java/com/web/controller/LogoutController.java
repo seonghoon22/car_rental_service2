@@ -22,7 +22,7 @@ public class LogoutController {
 	    @GetMapping("/logout")
 	    public String logout(HttpSession session) {
 	        session.invalidate();
-	        System.out.println("Seseion Delete! "+session.getAttribute("userid"));
+	        System.out.println("Session Deleted!");
 	        return "index";
 	}
 }
