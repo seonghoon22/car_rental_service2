@@ -1,6 +1,5 @@
 package com.web.domain;
 
-
 import javax.persistence.*;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -9,32 +8,31 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="car")
+@Table(name = "car")
 public class Car {
    @Id
-   @Column(name="car_no",nullable=false,length=8)
+   @Column(name = "car_no", nullable = false, length = 8)
    private Long car_no;
-   
-   @Column(name="model",length=20,nullable=false)
+
+   @Column(name = "model", length = 20, nullable = false)
    private String model;
-   
-   @Column(name="model_year",length=20,nullable=false)
+
+   @Column(name = "model_year", length = 20, nullable = false)
    private String model_year;
-   
-   @Column(name="price",nullable=false)
+
+   @Column(name = "price", nullable = false)
    private int price;
-   
-   @Column(name="imgpath",nullable=true)
+
+   @Column(name = "imgpath", nullable = true)
    private String imgpath;
-   
+
    @Transient
    private MultipartFile file;
-   
+
    public Car(long carNo) {
-	   this.car_no = carNo;
+      this.car_no = carNo;
    }
-   
-   
+
    public Long getCar_no() {
       return car_no;
    }
@@ -53,14 +51,6 @@ public class Car {
 
    public String getModel_year() {
       return model_year;
-   }
-   
-   public MultipartFile getFile() {
-	   return file;
-   }
-   
-   public void setFile(MultipartFile part) {
-	   this.file = part;
    }
 
    public void setModel_year(String model_year) {
@@ -81,5 +71,13 @@ public class Car {
 
    public void setImgpath(String imgpath) {
       this.imgpath = imgpath;
+   }
+
+   public MultipartFile getFile() {
+      return file;
+   }
+
+   public void setFile(MultipartFile file) {
+      this.file = file;
    }
 }
