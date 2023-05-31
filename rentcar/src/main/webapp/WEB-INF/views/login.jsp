@@ -43,7 +43,7 @@
 				</div>
 				<div class="etc-login-form">
 					<!-- <p>forgot your password? <a href="#">click here</a></p> -->
-					<p>회원이 아니신가요?&nbsp <a href="join"><b>회원가입하기<b></B></a></p>
+					<p>회원이 아니신가요?&nbsp <a href="join"><b>회원가입<b></B></a></p>
 				</div>
 			</form>
 		</div>
