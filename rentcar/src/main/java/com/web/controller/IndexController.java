@@ -29,8 +29,7 @@ public class IndexController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String root() {
 		return "index";
-		
-		
+				
 		
 	}
 	@RequestMapping(value="/index", method=RequestMethod.GET)
@@ -38,6 +37,10 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/main", method=RequestMethod.GET)
+	public String main() {
+		return "main";
+	}
 	
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public String board() {

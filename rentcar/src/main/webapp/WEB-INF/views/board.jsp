@@ -75,9 +75,9 @@ $(document).ready(function() {
       <li class="nav-item">
         <a class="nav-link" href="index">Home</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="board">Board</a>
-      </li>
+      </li> -->
     </ul>
   </div>  
 </nav>
