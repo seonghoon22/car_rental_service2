@@ -11,7 +11,7 @@
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!------ Include the above in your HEAD tag ---------->
-      <link rel="stylesheet" href="static/css/style.css">
+      <link rel="stylesheet" href="static/css/index.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="static/js/index.js"></script>
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -23,8 +23,8 @@
                <div class="menu-icon">
                   <i class="fa fa-bars fa-2x"></i>
                </div>
-               <div class="logo"><a href="index">
-                  Home</a>
+               <div class="logo">
+               	<a href="index"><p style="color:white">연암렌트카<p></a>
                </div>
                
                  
@@ -36,6 +36,12 @@
                   </ul>
                </div>
             </nav>
+            
+            <div class="button_container">
+				  <button class="btn" onclick="location.href='main'">
+				  <span>&nbsp&nbspStart&nbsp&nbsp</span>
+				  </button>
+			</div>
          </header>         
       </div>
 	</body>	
