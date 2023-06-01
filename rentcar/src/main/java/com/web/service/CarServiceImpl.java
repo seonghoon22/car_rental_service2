@@ -1,6 +1,10 @@
 package com.web.service;
 
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,8 +16,9 @@ import org.springframework.stereotype.Service;
 import com.web.domain.Car;
 import com.web.repository.CarRepository;
 
-@Service
-								//extends
+
+
+@Service					
 public class CarServiceImpl implements CarService{
 	 @Autowired
 	 private CarRepository carRepository;
@@ -30,12 +35,25 @@ public class CarServiceImpl implements CarService{
 	 }
 	 
 	 public Car getCarById(Long car_no) {
-	        Car CarById = carRepository.getCarById(car_no);
-	        return CarById;
+	        return carRepository.getCarById(car_no);
 	 }
 	 
-	 public void setNewCar(Car car) {  
-	        carRepository.setNewCar(car);  
-	 }  
-	 
-}
+	 public void setNewCar(Car car) {
+	        if (car.getFile() != null && !car.getFile().isEmpty()) {
+	            String uploadDir = "C:\\upload";
+	            String fileName = car.getCar_no() + ".png";
+	            String filePath = Paths.get(uploadDir, fileName).toString();
+
+	            try {
+	                byte[] bytes = car.getFile().getBytes();
+	                Path path = Paths.get(filePath);
+	                Files.write(path, bytes);
+	                car.setImgpath(filePath);
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+
+	        carRepository.setNewCar(car);
+	    }
+	}

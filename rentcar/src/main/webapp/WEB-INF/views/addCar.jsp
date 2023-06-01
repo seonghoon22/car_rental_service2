@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
@@ -20,7 +21,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3">
-            	<spring:message code="addCar.form.title.label" /> 
+                <spring:message code="addCar.form.title.label" /> 
             </h1>
         </div>
     </div>
@@ -34,74 +35,77 @@
     <div class="float-right" style="padding-right:30px">  
             <a href="?language=ko" >Korean</a>|<a href="?language=en">English</a>
     </div>  
+    
+    
+    
         
     <br><br>
-       <form:form modelAttribute = "NewCar" 
-       action="./add?${_csrf.parameterName}=${_csrf.token}"
+       <form:form modelAttribute="newCar" 
+       action="${pageContext.request.contextPath}/cars/add" 
        class="form-horizontal" 
        enctype="multipart/form-data">
         <fieldset>
         <legend><spring:message code="addCar.form.subtitle.label" /></legend>
         <div class="form-group row">
             <label class="col-sm-2 control-label">
-            	<spring:message code="addCar.form.carId.label" />
+                <spring:message code="addCar.form.carId.label" />
             </label>
             <div class="col-sm-3">
-                <form:input  path="car_no"  class="form-control"/>  
+                <form:input path="carNo" class="form-control"/>  
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 control-label" >
-            	<spring:message code="addCar.form.name.label" />
+                <spring:message code="addCar.form.name.label" />
             </label>
             <div class="col-sm-3">
-                <form:input  path="model"  class="form-control"/>  
+                <form:input path="model" class="form-control"/>  
             </div>
         </div>
         <div class="form-group row">
            <label class="col-sm-2 control-label" >
-           		<spring:message code="addCar.form.unitPrice.label" /> 
+                <spring:message code="addCar.form.unitPrice.label" /> 
            </label>
            <div class="col-sm-3">
-               <form:input  path="model_year" class="form-control"/>  
+               <form:input path="modelYear" class="form-control"/>  
            </div>
         </div>
         <div class="form-group row">
            <label class="col-sm-2 control-label" >
-				<spring:message code="addCar.form.author.label" />
-			</label>
+                <spring:message code="addCar.form.author.label" />
+           </label>
            <div class="col-sm-3">
-               <form:input  path="price" class="form-control"/>  
+               <form:input path="price" class="form-control"/>  
            </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 control-label" >
-            	<spring:message code="addBook.form.description.label" />
+                <spring:message code="addBook.form.description.label" />
             </label>
             <div class="col-sm-5">    
-                <form:textarea  path="imgpath" cols="50" rows="2" class="form-control"/>  
+                <form:textarea path="description" cols="50" rows="2" class="form-control"/>  
             </div>
         </div>
         
         <div class="form-group row">
             <label class="col-sm-2 control-label" >
-            	<spring:message code="addCar.form.condition.label" />
+                <spring:message code="addCar.form.condition.label" />
             </label>
 
         </div>
         
         <div class="form-group row"> 
-        	<label class="col-sm-2 control-label" >
-        		<spring:message code="addCar.form.bookImage.label" /> 
-        	</label>
-        	<div class="col-sm-7">
-            	<form:input path="imgpath" type="file" class="form-control" />
-        	</div>
-     	</div> 
+            <label class="col-sm-2 control-label" >
+                <spring:message code="addCar.form.carImage.label" /> 
+            </label>
+            <div class="col-sm-7">
+                <form:input path="carImage" type="file" class="form-control" />
+            </div>
+        </div> 
      
         <div class="form-group row">
             <div class="col-sm-offset-2 col-sm-10" >
-            <input type="submit" class="btn btn-primary" value ="<spring:message code="addCar.form.button.label" /> "/>
+            <input type="submit" class="btn btn-primary" value="<spring:message code="addCar.form.button.label" />"/>
             </div>
         </div>
         </fieldset>
