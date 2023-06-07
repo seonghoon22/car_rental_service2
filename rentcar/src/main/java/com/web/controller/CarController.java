@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -22,79 +23,59 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import javax.validation.Valid;
+import java.io.IOException;
+import java.util.List;
+
 import com.web.domain.Car;
 import com.web.service.CarService;
 
 @Controller
-@RequestMapping("/cars")
+//@RequestMapping("/cars")
 public class CarController {
 
-    @Autowired
     private CarService carService;
 
-    public CarController() {
-        System.out.println("------------------------------------------");
-        System.out.println("carController create");
-        System.out.println("------------------------------------------");
+    @Autowired
+    public CarController(CarService carService) {
+    	System.out.println("create CarController");
+        this.carService = carService;
     }
 
-    @GetMapping("/car")
-    public String requestBookById(@RequestParam("id") Long car_no, Model model) {
-        Car carById = carService.getCarById(car_no);
-        model.addAttribute("car", carById);
-        return "car";
+    @GetMapping("/cars")
+    public String getAllCars(Model model) {
+    	System.out.println("@GetMapping(\"/cars\")");
+        List<Car> cars = carService.getAllCars();
+        model.addAttribute("cars", cars);
+        return "car-list";
     }
 
-    @GetMapping("/filter/{carFilter}")
-    public String requestCarByFilter(@MatrixVariable(pathVar = "carFilter") Map<String, List<String>> carFilter, Model model) {
-        Set<Car> carsByFilter = carService.getCarListByFilter(carFilter);
-        model.addAttribute("carList", carsByFilter);
-        return "cars";
+    @GetMapping("/cars/new")
+    public String showCarForm(Model model) {
+    	System.out.println("@GetMapping(\"/cars\")22");
+        model.addAttribute("car", new Car());
+        return "car-form";
     }
 
-    @GetMapping("/all")
-    public ModelAndView requestAllCar() {
-        ModelAndView modelAndView = new ModelAndView();
-        List<Car> list = carService.getAllCarList();
-        modelAndView.addObject("carList", list);
-        modelAndView.setViewName("cars");
-        return modelAndView;
-    }
-
-    @GetMapping
-    public String requestCarList(Model model) {
-        List<Car> list = carService.getAllCarList();
-        model.addAttribute("carList", list);
-        return "car";
-    }
-
-    @PostMapping("/add")
-    public String submitAddNewCar(@ModelAttribute("NewCar") Car car) {
-        MultipartFile carImgpath = car.getFile();
-
-        if (carImgpath != null && !carImgpath.isEmpty()) {
-            String saveName = carImgpath.getOriginalFilename();
-            File saveFile = new File("C:\\upload", saveName);
-
-            try {
-                carImgpath.transferTo(saveFile);
-            } catch (Exception e) {
-                throw new RuntimeException("차량 이미지 업로드가 실패하였습니다", e);
-            }
-            car.setImgpath(saveName);
+    @PostMapping("/cars/new")
+    public String saveCar(@Valid @ModelAttribute Car car, BindingResult bindingResult,
+                          @RequestParam("file") MultipartFile file) throws IOException {
+    	System.out.println("@GetMapping(\"/cars\")33");
+        if (bindingResult.hasErrors()) {
+            return "car-form";
         }
 
-        carService.setNewCar(car);
+        car.setFile(file);
+        carService.saveCar(car);
         return "redirect:/cars";
     }
 
-    @ModelAttribute
-    public void addAttributes(Model model) {
-        model.addAttribute("addTitle", "신규 car 등록");
-    }
-
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.setAllowedFields("car_no", "model", "model_year", "price", "file");
+    @GetMapping("/cars/{carNo}")
+    public String getCarDetails(@PathVariable("carNo") Long car_no, Model model) {
+    	System.out.println("@GetMapping(\"/cars\")44");
+        Car car = carService.getCarByCar_no(car_no);
+        model.addAttribute("car", car);
+        return "car-details";
     }
 }

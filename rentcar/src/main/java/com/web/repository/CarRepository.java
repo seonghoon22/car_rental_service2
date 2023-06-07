@@ -10,9 +10,10 @@ import org.springframework.stereotype.Repository;
 import com.web.domain.*;
 
 @Repository
-public interface CarRepository {
-	 List<Car> getAllCarList();
-	 Set<Car> getCarListByFilter(Map<String, List<String>> filter);
-	 Car getCarById(Long car_no);
-	 void setNewCar(Car car);
+public interface CarRepository extends JpaRepository<Car, Long> {
+	// Car findByCar_no(Long car_no);
+    List<Car> findCarsByModel(String model);
+
+	CarRepository findByCar_no(Long car_no);
 }
+
