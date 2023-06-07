@@ -52,9 +52,9 @@
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Id</label>
                                     <div class="col-md-6">
                                         <input type="text" id="full_name" class="form-control" name="id">
-                                        <c:if test="${not empty idMessage}">
-                                            <span class="text-danger"><c:out value="${idMessage}" /></span>
-                                        </c:if>
+                                                <c:if test="${not empty idMessage}">
+										            <span class="text-danger">${idMessage}</span>
+										        </c:if>
                                     </div>
                                 </div>
  
@@ -63,7 +63,7 @@
                                     <div class="col-md-6">
                                         <input type="text" id="email_address" class="form-control" name="password">
                                         <c:if test="${not empty passwordMessage}">
-                                            <span class="text-danger"><c:out value="${passwordMessage}"/></span>
+                                            <span class="text-danger">${passwordMessage}</span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                     <div class="col-md-6">
                                         <input type="text" id="user_name" class="form-control" name="name">
                                         <c:if test="${not empty nameMessage}">
-                                            <span class="text-danger"><c:out value= "${nameMessage}"/></span>
+                                            <span class="text-danger">${nameMessage}</span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                     <div class="col-md-6">
                                         <input type="text" id="phone_number" class="form-control" name="phone">
                                         <c:if test="${not empty phoneMessage}">
-                                            <span class="text-danger"><c:out value="${phoneMessage}"/></span>
+                                            <span class="text-danger">${phoneMessage}</span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                     <div class="col-md-6">
                                         <input type="text" id="present_address" class="form-control" name="address">
                                         <c:if test="${not empty addressMessage}">
-                                            <span class="text-danger"><c:out value="${addressMessage}"/></span>
+                                            <span class="text-danger">{addressMessage}</span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
                                     <div class="col-md-6">
                                         <input type="text" id="age" class="form-control" name="age">
                                         <c:if test="${not empty ageMessage}">
-                                            <span class="text-danger"><c:out value="${ageMessage}"/></span>
+                                            <span class="text-danger">${ageMessage}</span>
                                         </c:if>
                                     </div>
                                 </div>
