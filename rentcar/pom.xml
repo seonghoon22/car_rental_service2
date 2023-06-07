@@ -108,7 +108,58 @@
 		    <artifactId>tiles-jsp</artifactId>
 		    <version>2.2.1</version>
 		</dependency>
-	
+				
+		<!-- Spring Security -->
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		
+		
+		<!-- Spring Boot Starter -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- Spring Boot DevTools (Optional) -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		    <scope>runtime</scope>
+		    <optional>true</optional>
+		</dependency>
+		
+		<!-- Spring Boot Thymeleaf Starter -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<!-- Spring Data JPA -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<!-- H2 Database (In-memory database, Optional) -->
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <scope>runtime</scope>
+		</dependency>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Lombok -->
+		
 		<!-- lombok -->
       <dependency>
           <groupId>org.projectlombok</groupId>
