@@ -5,32 +5,37 @@
     <title>Car Form</title>
 </head>
 <body>
-    <h2>Car Form</h2>
-    <form:form method="POST" action="/cars/new" enctype="multipart/form-data" modelAttribute="car">
-        <table>
-            <tr>
-                <td><form:label path="model">Model:</form:label></td>
-                <td><form:input path="model" /></td>
-                <td><form:errors path="model" cssClass="error" /></td>
-            </tr>
-            <tr>
-                <td><form:label path="model_year">Model Year:</form:label></td>
-                <td><form:input path="model_year" /></td>
-                <td><form:errors path="model_year" cssClass="error" /></td>
-            </tr>
-            <tr>
-                <td><form:label path="price">Price:</form:label></td>
-                <td><form:input path="price" /></td>
-                <td><form:errors path="price" cssClass="error" /></td>
-            </tr>
-            <tr>
-                <td><form:label path="file">Image:</form:label></td>
-                <td><input type="file" name="file" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="Save" /></td>
-            </tr>
-        </table>
-    </form:form>
+<h2>Car Form</h2>
+<form method="POST" action="/cars/new" enctype="multipart/form-data" modelAttribute="car">
+    <table>
+    	<tr>
+            <td><label for="car_no">Car_no:</label></td>
+            <td><input type="text" id="car_no" name="car_no" value="${car.car_no}" /></td>
+            <td>${carErrors.car_no}</td>
+        </tr>
+        <tr>
+            <td><label for="model">model:</label></td>
+            <td><input type="text" id="model" name="model" value="${car.model}" /></td>
+            <td>${carErrors.model}</td>
+        </tr>
+        <tr>
+            <td><label for="model_year">Model Year:</label></td>
+            <td><input type="text" id="model_year" name="model_year" value="${car.model_year}" /></td>
+            <td>${carErrors.model_year}</td>
+        </tr>
+        <tr>
+            <td><label for="price">Price:</label></td>
+            <td><input type="text" id="price" name="price" value="${car.price}" /></td>
+            <td>${carErrors.price}</td>
+        </tr>
+        <tr>
+            <td><label for="file">Image:</label></td>
+            <td><input type="file" id="file" name="file" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Save" /></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

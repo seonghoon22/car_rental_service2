@@ -8,13 +8,13 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-@WebListener // 서블릿 3.0이상에서 지원. 
-public class SessionConfig implements HttpSessionListener {
+//@WebListener // 서블릿 3.0이상에서 지원. 
+//public class SessionConfig implements HttpSessionListener {
 
 	// 구현할수 있는 기능?
 	// 중복로그인 방지
 	// 현재 접속자 수, 전체 방문자 수
-	
+	/*
 	private static int currentCount; // 현재 접속자 수
 	private static int visitTotalCount; // 전체방문자 수
 	
@@ -27,7 +27,7 @@ public class SessionConfig implements HttpSessionListener {
 		return visitTotalCount;
 	}
 	
-	
+	*/
 	/*
 	 세션 : 웹브라우저가 서버(사이트)에 접속하게되면 바로 생성됨. 서버로부터 각 브라우저 사용자를 식별하기위한 세션ID를 쿠키형태로 발급받게된다.
 	 로그인을 통하여, 생성되는 것이 아니다. 
@@ -44,11 +44,11 @@ public class SessionConfig implements HttpSessionListener {
 	
 
 	// 세션생성시 발급받은 고유한 식별의 세션아이디와 HttpSession을 저장한다.
-	private static final Map<String, HttpSession> sessions = new ConcurrentHashMap<>();
+//	private static final Map<String, HttpSession> sessions = new ConcurrentHashMap<>();
 	
 	// 중복로그인 삭제 : 로그인 성공후 세션에 저장작업 이전에 호출목적으로 존재.
-	public synchronized static String getSessionCheck(String type, String compareId) {
-		
+//	public synchronized static String getSessionCheck(String type, String compareId) {
+/*		
 		String result = "";
 		
 		for(String key : sessions.keySet()) {
@@ -105,3 +105,4 @@ public class SessionConfig implements HttpSessionListener {
 	}
 
 }
+*/
