@@ -12,5 +12,8 @@ import com.web.domain.*;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
     List<Car> findCarsByModel(String model);
+
+//    Car findByCar_no(Long car_no);
+
 }
 

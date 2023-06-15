@@ -61,7 +61,7 @@
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="password">
+                                        <input type="password" id="email_address" class="form-control" name="password">
                                         <c:if test="${not empty passwordMessage}">
                                             <span class="text-danger">${passwordMessage}</span>
                                         </c:if>
