@@ -45,7 +45,5 @@ public class Car {
 	}
 
 	public void setFile(MultipartFile file2) {
-		// TODO Auto-generated method stub
-		
 	}
 }

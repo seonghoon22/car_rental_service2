@@ -1,5 +1,5 @@
 package com.web.repository;
-
+  
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -11,9 +11,6 @@ import com.web.domain.*;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
-	// Car findByCar_no(Long car_no);
     List<Car> findCarsByModel(String model);
-
-	CarRepository findByCar_no(Long car_no);
 }
 
