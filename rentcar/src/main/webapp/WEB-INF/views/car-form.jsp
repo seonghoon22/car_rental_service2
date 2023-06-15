@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<head>
+<head>  
     <title>Car Form</title>
 </head>
 <body>
+
     <h2>Car Form</h2>
     <form:form method="POST" action="/web/cars/new" enctype="multipart/form-data" modelAttribute="car">
         <table>

@@ -38,7 +38,7 @@
             </nav>
             
             <div class="button_container">
-				  <button class="btn" onclick="location.href='main'">
+				  <button class="btn" onclick="location.href='search'">
 				  <span>&nbsp&nbspStart&nbsp&nbsp</span>
 				  </button>
 			</div>

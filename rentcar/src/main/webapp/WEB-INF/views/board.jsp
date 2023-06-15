@@ -87,7 +87,7 @@ $(document).ready(function() {
       <div class="col-sm-12">
          <thead>
             <tr>
-               <th>게시판</th>
+               <th></th>
             </tr>   
          </thead>
          <table id="example" class="display" style="width:100%">

@@ -63,6 +63,7 @@ public class Car {
 	      return file;
 	   }
 
+
 	   public void setFile(MultipartFile file) {
 	      this.file = file;
 	   }
@@ -107,5 +108,4 @@ public class Car {
 	      this.imgpath = imgpath;
 	   }
 
-	
 }
