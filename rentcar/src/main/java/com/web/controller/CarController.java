@@ -48,14 +48,13 @@ public class CarController {
 
     @PostMapping("/cars/new")
     public String saveCar(@Valid @ModelAttribute Car car, BindingResult bindingResult,
-                          @RequestParam("file") MultipartFile file) throws IOException {
+                          @RequestParam("file") MultipartFile file) throws Exception {
        System.out.println("@GetMapping(\"/cars\")33");
         if (bindingResult.hasErrors()) {
             return "car-form";
         }
 
-		/* car.setFile(file); */
-        carService.saveCar(car);
+        carService.saveCar(car,file);
         return "redirect:/cars";
     }
 
