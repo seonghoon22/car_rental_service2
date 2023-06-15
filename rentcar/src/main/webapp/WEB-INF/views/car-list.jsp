@@ -22,6 +22,6 @@
         </c:forEach>
     </table>
     <br>
-    <a href="/cars/new">Add New Car</a>
+    <a href="/web/cars/new">Add New Car</a>
 </body>
 </html>

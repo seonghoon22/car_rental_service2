@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Car Form</h2>
-    <form:form method="POST" action="/cars/new" enctype="multipart/form-data" modelAttribute="car">
+    <form:form method="POST" action="/web/cars/new" enctype="multipart/form-data" modelAttribute="car">
         <table>
             <tr>
                 <td><form:label path="model">Model:</form:label></td>
