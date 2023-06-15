@@ -5,12 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.annotations.ColumnDefault;
 
 
 
@@ -19,6 +15,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class User{
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @ColumnDefault("0")
    private int user_no;
    
    @Column(name="id", nullable=false)
