@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Car List</title>
 </head>
 <body>
@@ -21,6 +22,9 @@
             </tr>
         </c:forEach>
     </table>
+    <div>
+			<img src="${car.imgpath}" style="width:300px;height:auto;">
+	</div>
     <br>
     <a href="/web/cars/new">Add New Car</a>
 </body>
