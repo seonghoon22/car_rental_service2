@@ -1,14 +1,14 @@
 package com.web.service;
   
 
-import java.util.List;
-import java.util.UUID;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.web.domain.Car;
 import com.web.repository.CarRepository;
 
@@ -16,9 +16,13 @@ import com.web.repository.CarRepository;
 @Service
 public class CarServiceImpl implements CarService {
    
-   @Autowired
-    private CarRepository carRepository;
+	private CarRepository carRepository;
 
+    @Autowired
+    public CarServiceImpl(CarRepository carRepository) {
+        this.carRepository = carRepository;
+    }
+    
     @Override
     public List<Car> getAllCars() {
         return carRepository.findAll();
@@ -34,13 +38,10 @@ public class CarServiceImpl implements CarService {
     public void saveCar(Car car, MultipartFile file) {
 
         /*우리의 프로젝트경로를 담아주게 된다 - 저장할 경로를 지정*/
-      String projectPath = /* System.getProperty("user.dir") + */ "C:\\Users\\user\\git\\rentcar\\rentcar\\src\\main\\resources\\static\\images";
-
-        /*식별자 . 랜덤으로 이름 만들어줌*/
-      /* UUID uuid = UUID.randomUUID(); */
+      String projectPath =  "C:\\Users\\user\\git\\rentcar\\rentcar\\src\\main\\resources\\static\\images";
 
         /*랜덤식별자_원래파일이름 = 저장될 파일이름 지정*/
-      String fileName = /* uuid + "_" + */ file.getOriginalFilename();
+      String fileName =  file.getOriginalFilename();
 
         /*빈 껍데기 생성*/
         /*File을 생성할건데, 이름은 "name" 으로할거고, projectPath 라는 경로에 담긴다는 뜻*/
@@ -53,8 +54,13 @@ public class CarServiceImpl implements CarService {
       }
         
         /*저장되는 경로*/
-        car.setImgpath(fileName); /*저장된파일의이름,저장된파일의경로*/
+        car.setImgpath(fileName);
         
         carRepository.save(car);
+    }
+    
+    @Override
+    public void deleteCar(long carNo) {
+        carRepository.delete(carNo);
     }
 }
