@@ -43,69 +43,16 @@ public class Car {
 	public Car() {
 		super();
 	}
-	/*
-	public void setFile(MultipartFile file) {
-		// TODO Auto-generated method stub
-		this.file = file;
-	}
-
-	public Car(Long car_no, String model, String model_year, int price, String imgpath, MultipartFile file) {
-		super();
-		this.car_no = car_no;
-		this.model = model;
-		this.model_year = model_year;
-		this.price = price;
-		this.imgpath = imgpath;
-		this.file = file;
-	}
-	*/
+	
 	public MultipartFile getFile() {
 	      return file;
 	   }
 
 
-	   public void setFile(MultipartFile file) {
-	      this.file = file;
-	   }
+	public void setFile(MultipartFile file) {
+	    this.file = file;
+	}
 
-	   public Long getCar_no() {
-	      return car_no;
-	   }
-
-	   public void setCar_no(Long car_no) {
-	      this.car_no = car_no;
-	   }
-
-	   public String getModel() {
-	      return model;
-	   }
-
-	   public void setModel(String model) {
-	      this.model = model;
-	   }
-
-	   public String getModel_year() {
-	      return model_year;
-	   }
-
-	   public void setModel_year(String model_year) {
-	      this.model_year = model_year;
-	   }
-
-	   public int getPrice() {
-	      return price;
-	   }
-
-	   public void setPrice(int price) {
-	      this.price = price;
-	   }
 	   
-	   public String getImgpath() {
-	      return imgpath;
-	   }
-
-	   public void setImgpath(String imgpath) {
-	      this.imgpath = imgpath;
-	   }
 
 }
