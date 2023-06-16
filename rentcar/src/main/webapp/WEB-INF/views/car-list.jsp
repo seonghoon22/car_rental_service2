@@ -28,7 +28,7 @@
         </c:forEach>
     </table>
     <div>
-			<img src="${car.imgpath}" style="width:300px;height:auto;">
+			<img src="/images/${car.imgpath}" style="width:300px;height:auto;">
 	</div>
     <br>
     <a href="/web/cars/new">Add New Car</a>
