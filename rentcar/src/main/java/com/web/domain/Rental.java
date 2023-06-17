@@ -1,9 +1,8 @@
 package com.web.domain;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -27,59 +26,37 @@ public class Rental {
 	 	@Column(nullable = false)
 	    private String id;
 	 	
-	    @Column(nullable = false)
-	    private int year;
-
-	    @Column(nullable = false)
-	    private int month;
-
-	    @Column(nullable = false)
-	    private int day;
-	    
-	    @Column(nullable = false)
+	 	@Column(nullable = false)
+	 	private int rentalPeriod;
+	 	
+	 	@Column(nullable = false)
+	 	private int totalCost;
+	 	
+	 	@Column(columnDefinition = "DATE", nullable = false)
+	 	private LocalDate startDate;
+	 	
+	 	@Column(nullable = false)
 	    private int startTime;
-	    
-	    @Column(nullable = false)
-	    private LocalDate endDate; // 대여 종료일자
-
-	    @Column(nullable = false)
-	    private LocalTime endTime; // 대여 종료시간
+	 	
+	 	@Column(columnDefinition = "DATE", nullable = false)
+	    private LocalDate endDate;
+	 	
+	 	@Column(nullable = false)
+	    private int endTime;
 	    
 	    public Rental() {
 	        super();
 	    }
 
-	    public Rental(Long rental_no, Long car_no, String id, int year, int month, int day, int startTime) {
+	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, LocalDate startDate, int startTime, LocalDate endDate, int endTime) {
 	    	this.rental_no = rental_no;
 	        this.car_no = car_no;
 	        this.id = id;
-	        this.year = year;
-	        this.month = month;
-	        this.day = day;
+	        this.totalCost = totalCost;
+	        this.rentalPeriod = rentalPeriod;
+	        this.startDate = startDate;
 	        this.startTime = startTime;
-	    }
-	    
-	    
-	    public void setRentalPeriod(int endTime) {
-	        // 대여 시작일자 및 시간
-	        LocalDate startDate = LocalDate.of(year, month, day);
-
-	        // 대여 종료일자 및 시간
-	        LocalDate endDate;
-	        LocalTime endTimeObj;
-
-	        if (endTime >= startTime) {
-	            // 대여 기간이 하루 이내인 경우
-	            endDate = startDate;
-	            endTimeObj = LocalTime.of(endTime / 100, endTime % 100);
-	        } else {
-	            // 대여 기간이 하루를 초과하는 경우
-	            endDate = startDate.plusDays((long) ((endTime - startTime) / 100));
-	            endTimeObj = LocalTime.of(endTime / 100, endTime % 100);
-	        }
-
-	        // 대여 종료일자 및 시간 설정
 	        this.endDate = endDate;
-	        this.endTime = endTimeObj;
+	        this.endTime = endTime;
 	    }
 }
