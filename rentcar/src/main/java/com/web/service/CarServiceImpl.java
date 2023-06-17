@@ -3,6 +3,7 @@ package com.web.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void saveCar(Car car, MultipartFile file) {
-
         /*우리의 프로젝트경로를 담아주게 된다 - 저장할 경로를 지정*/
       String projectPath =  "C:\\Users\\user\\git\\rentcar\\rentcar\\src\\main\\resources\\static\\images";
 
@@ -60,6 +60,10 @@ public class CarServiceImpl implements CarService {
     }
     
     @Override
+    public List<Car> searchAvailableCars(LocalDate startDate, LocalDate endDate) {
+        List<Car> availableCars = carRepository.findAvailableCars(endDate);
+        return availableCars;
+
     public void deleteCar(long carNo) {
         carRepository.delete(carNo);
     }
