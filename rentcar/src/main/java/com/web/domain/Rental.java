@@ -16,6 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Rental {
+
 	 	@Id
 	 	@Column(nullable = false)
 	 	private Long rental_no;
@@ -59,4 +60,5 @@ public class Rental {
 	        this.endDate = endDate;
 	        this.endTime = endTime;
 	    }
+
 }
