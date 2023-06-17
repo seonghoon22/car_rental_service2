@@ -8,6 +8,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import lombok.ToString;
+
+@ToString
 public class userDTO {
     @NotBlank(message = "아이디를 입력하세요")
     @Pattern(regexp = "[a-zA-Z0-9]+", message = "아이디는 영문자와 숫자만 입력 가능합니다")
