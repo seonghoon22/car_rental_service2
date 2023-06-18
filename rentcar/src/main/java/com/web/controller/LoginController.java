@@ -32,7 +32,7 @@ public class LoginController {
         	   HttpSession session = request.getSession();
         	   session.setAttribute("userid", user.getId());
         	   System.out.println("Session Created! id : " + session.getAttribute("userid"));
-               return "index";
+               return "loginindex";
            }
            return "login";
        }
