@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,11 +19,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.web.domain.Board;
 import com.web.domain.Reply;
+import com.web.domain.User;
 import com.web.service.BoardServiceImpl;
+import com.web.service.UserService;
 
 @Controller
 public class IndexController {
 	
+	@Autowired
+	private UserService userservice;
 	
 	@Autowired
 	private BoardServiceImpl s;
@@ -97,5 +103,20 @@ public class IndexController {
         s.deleteBoard(idx);
         return "redirect:/";
     }
+    
+    @GetMapping("/mypage")
+    public String showUser(HttpSession session,Model model) {
+    	
+    	String id = (String)session.getAttribute("userid");
+    	User user = userservice.showUser(id);
+    	if(id.equals("gjsl1945")) {
+    		return "redirect:/cars";
+    	}else {
+    	
+    	model.addAttribute("user", user);
+        return "mypage";
+    	}
+    	}
+    
 }
  
