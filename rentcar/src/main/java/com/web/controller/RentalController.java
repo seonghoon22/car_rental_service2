@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,10 +39,14 @@ public class RentalController {
 	
 	@RequestMapping(value="/rental/search", method=RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<List<Car>> searchAvailable(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-	        @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-	    List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
-	    return ResponseEntity.ok(cars);
+	public String searchAvailable(@RequestParam("startDate") String startDateString,
+            @RequestParam("endDate") String endDateString, Model model) {
+		
+	    LocalDate startDate = LocalDate.parse(startDateString);
+	    LocalDate endDate = LocalDate.parse(endDateString);
+		  List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
+      model.addAttribute("cars", cars);
+      return "rental";
 	}
 	
 		
