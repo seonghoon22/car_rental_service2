@@ -3,9 +3,13 @@ package com.web.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,9 +44,9 @@ public class RentalController {
 		
 	    LocalDate startDate = LocalDate.parse(startDateString);
 	    LocalDate endDate = LocalDate.parse(endDateString);
-		List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
-        model.addAttribute("cars", cars);
-        return "rental";
+		  List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
+      model.addAttribute("cars", cars);
+      return "rental";
 	}
 	
 		

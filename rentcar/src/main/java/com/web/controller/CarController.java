@@ -39,6 +39,7 @@ public class CarController {
         return "car-form";
     }
 
+    
     @PostMapping("/cars/new")
     public String saveCar(@Valid @ModelAttribute Car car, BindingResult bindingResult,
                           @RequestParam("file") MultipartFile file) throws Exception {
@@ -50,9 +51,9 @@ public class CarController {
         return "redirect:/cars";
     }
     
-    @GetMapping("/deleteCar/{car_no}")
-    public String deleteCar(@PathVariable("car_no") int carNo) {
+    @GetMapping("/cars/deleteCar")
+    public String deleteCar(@RequestParam("carNo") long carNo) {
         carService.deleteCar(carNo);
-        return "redirect:/web/cars/";
+        return "redirect:/cars";
     }
 }
