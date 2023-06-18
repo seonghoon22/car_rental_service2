@@ -4,9 +4,19 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Car List</title>
 </head>
-<body>  
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	        <ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a class="nav-link" href="loginindex">Home</a>
+	            </li>
+	        </ul>
+	    </div>  
+	</nav>  
     <h2>Car List</h2>
     <table>
         <tr>

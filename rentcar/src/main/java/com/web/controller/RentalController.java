@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +27,8 @@ public class RentalController {
 	
 	@RequestMapping(value="/rental", method=RequestMethod.GET)
 	public String search() {
-		return "rental";
+		
+			return "rental";
 	}
 	
 	
@@ -45,16 +45,12 @@ public class RentalController {
         return "rental";
 	}
 	
-	
-	
+		
 	
 	@RequestMapping(value="/rental/save", method=RequestMethod.GET)
 	public String rentalSave(Rental rental) {
 		rentalService.rent(rental);
 		return "rental";
 	}
-	
-	
-	
-	
+				
 }

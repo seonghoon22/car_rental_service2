@@ -64,7 +64,7 @@ public class CarServiceImpl implements CarService {
         List<Car> availableCars = carRepository.findAvailableCars(startDate, endDate);
         return availableCars;
     }
-    
+
     @Override
     public void deleteCar(long carNo) {
         carRepository.delete(carNo);

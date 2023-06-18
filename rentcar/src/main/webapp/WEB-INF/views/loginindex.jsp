@@ -24,19 +24,21 @@
                   <i class="fa fa-bars fa-2x"></i>
                </div>
                <div class="logo">
-               	<a href="index"><p style="color:white">연암렌트카<p></a>
+               	<a href="loginindex"><p style="color:white">연암렌트카<p></a>
                </div>
                
                  
                <div class="menu">
                   <ul>
-                     <li><a href="login">Login</a></li>
+                     <li><a href="logout">Logout</a></li>
+                     <li><a href="board">Review</a></li>
+                     <li><a href="mypage">MyPage</a></li>
                   </ul>
                </div>
             </nav>
             
             <div class="button_container">
-				  <button class="btn" onclick="location.href='login'">	
+				  <button class="btn" onclick="location.href='rental'">
 				  <span>&nbsp&nbspStart&nbsp&nbsp</span>
 				  </button>
 			</div>

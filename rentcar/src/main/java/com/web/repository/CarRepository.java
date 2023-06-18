@@ -13,7 +13,6 @@ import com.web.domain.Car;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-	 List<Car> findCarsByModel(String model);
 
 	 @Query("SELECT c FROM Car c WHERE NOT EXISTS (SELECT r FROM Rental r WHERE c.car_no = r.car_no AND r.endDate >= :start AND r.startDate <= :end)")
 	List<Car> findAvailableCars(@Param("start") LocalDate startDate, 
