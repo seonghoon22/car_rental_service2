@@ -37,6 +37,11 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/loginindex", method=RequestMethod.GET)
+	public String loginindex() {
+		return "loginindex";
+	}
+	
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public String board() {
 		return "board";
