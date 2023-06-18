@@ -35,8 +35,11 @@ public class RentalController {
 	
 	@RequestMapping(value="/rental/search", method=RequestMethod.POST)
 	@ResponseBody
-	public String searchAvailable(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate, Model model) {
+	public String searchAvailable(@RequestParam("startDate") String startDateString,
+            @RequestParam("endDate") String endDateString, Model model) {
+		
+	    LocalDate startDate = LocalDate.parse(startDateString);
+	    LocalDate endDate = LocalDate.parse(endDateString);
 		List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
         model.addAttribute("cars", cars);
         return "rental";
