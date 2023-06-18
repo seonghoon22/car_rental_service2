@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<head>  
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">	  
     <title>Car Form</title>
 </head>
 <body>
-
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	        <ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a class="nav-link" href="loginindex">Home</a>
+	            </li>
+	        </ul>
+	    </div>  
+	</nav>
     <h2>Car Form</h2>
     <form:form method="POST" action="/web/cars/new" enctype="multipart/form-data" modelAttribute="car">
         <table>

@@ -49,13 +49,6 @@ public class CarController {
         carService.saveCar(car,file);
         return "redirect:/cars";
     }
-
-    @GetMapping("/cars/{carNo}")
-    public String getCarDetails(@PathVariable("carNo") Long car_no, Model model) {
-        Car car = carService.getCarByCar_no(car_no);
-        model.addAttribute("car", car);
-        return "car-details";
-    }
     
     @GetMapping("/deleteCar/{car_no}")
     public String deleteCar(@PathVariable("car_no") int carNo) {
