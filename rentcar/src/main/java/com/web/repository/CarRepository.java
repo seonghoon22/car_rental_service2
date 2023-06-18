@@ -14,8 +14,7 @@ import com.web.domain.Car;
 public interface CarRepository extends JpaRepository<Car, Long> {
 
     List<Car> findCarsByModel(String model);
-//    @Query("SELECT c FROM Car c WHERE c.car_no NOT IN (SELECT r.car_no FROM Rental r WHERE r.endDate >= CURRENT_DATE AND r.startDate <= :endDate)")
-    @Query("SELECT c FROM Car c ")
+    @Query("SELECT c FROM Car c WHERE c.car_no NOT IN (SELECT r.car_no FROM Rental r WHERE r.endDate >= CURRENT_DATE AND r.startDate <= :endDate)")
     List<Car> findAvailableCars();
 
 }
