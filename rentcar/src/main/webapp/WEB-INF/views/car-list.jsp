@@ -41,7 +41,7 @@
     
      <script>
         function deleteCar(carNo) {
-                location.href = "/web/cars/deleteCar?car_no=" + carNo;
+                location.href = "/web/cars/deleteCar?carNo=" + carNo;
         }
     </script>
 </body>

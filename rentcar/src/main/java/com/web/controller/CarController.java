@@ -50,9 +50,9 @@ public class CarController {
         return "redirect:/cars";
     }
     
-    @GetMapping("/deleteCar/{car_no}")
-    public String deleteCar(@PathVariable("car_no") int carNo) {
+    @GetMapping("/cars/deleteCar")
+    public String deleteCar(@RequestParam("carNo") long carNo) {
         carService.deleteCar(carNo);
-        return "redirect:/web/cars/";
+        return "redirect:/cars";
     }
 }
