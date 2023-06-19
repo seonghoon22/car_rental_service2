@@ -2,6 +2,7 @@ package com.web.domain;
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,13 +37,13 @@ public class Rental {
 	 	private int totalCost;
 	 	
 	 	@Column(name = "start_date", columnDefinition = "DATE", nullable = false)
-	 	private LocalDate startDate;
+	 	private Date startDate;
 	 	
 	 	@Column(nullable = false)
 	    private int startTime;
 	 	
 	 	@Column(name = "end_date", columnDefinition = "DATE", nullable = false)
-	    private LocalDate endDate;
+	    private Date endDate;
 	 	
 	 	@Column(nullable = false)
 	    private int endTime;
@@ -55,7 +56,7 @@ public class Rental {
 	        super();
 	    }
 
-	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, LocalDate startDate, int startTime, LocalDate endDate, int endTime) {
+	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, Date startDate, int startTime, Date endDate, int endTime) {
 	    	this.rental_no = rental_no;
 	        this.car_no = car_no;
 	        this.id = id;
