@@ -1,6 +1,8 @@
 package com.web.domain;
 
 
+
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -53,7 +55,9 @@ public class Rental {
 	        super();
 	    }
 
+
 	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, Date startDate, int startTime, Date endDate) {
+
 	    	this.rental_no = rental_no;
 	        this.car_no = car_no;
 	        this.id = id;

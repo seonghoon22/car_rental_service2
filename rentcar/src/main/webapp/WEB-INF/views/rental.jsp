@@ -1,23 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Car List</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="loginindex">Home</a>
-            </li>
-        </ul>
-    </div>  
-</nav>
-
-<br>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	        <ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a class="nav-link" href="loginindex">Home</a>
+	            </li>
+	        </ul>
+	    </div>  
+	</nav>
+	<br>
 <h2>대여 가능 차량 검색</h2>
 <hr>
 <form id="rentalForm" action ="/web/rental/search" method = "post">
