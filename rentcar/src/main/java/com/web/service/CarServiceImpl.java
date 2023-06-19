@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,8 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car getCarByCar_no(Long car_no) {
-       // return carRepository.findByCar_no(car_no);
-       return null;
+    	Car car =carRepository.findOne(car_no);
+       return car;
     }
 
     @Override
@@ -62,11 +63,15 @@ public class CarServiceImpl implements CarService {
     
     @Override
     public List<Car> searchAvailableCars(LocalDate startDate, LocalDate endDate) {
+<<<<<<< HEAD
     	System.out.println(startDate + " ~ " + endDate);
         List<Car> availableCars = carRepository.findAvailableCars(Date.valueOf(startDate), Date.valueOf(endDate));
         for (Car car : availableCars) {
 			System.out.println(car);
 		}
+=======
+        List<Car> availableCars = carRepository.findAvailableCars(Date.valueOf(startDate), Date.valueOf(endDate));
+>>>>>>> branch 'main' of https://github.com/seonghoon22/rentcar.git
         return availableCars;
     }
 
