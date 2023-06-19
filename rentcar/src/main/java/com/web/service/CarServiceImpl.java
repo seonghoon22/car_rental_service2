@@ -32,8 +32,8 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car getCarByCar_no(Long car_no) {
-       // return carRepository.findByCar_no(car_no);
-       return null;
+       Car car =carRepository.findOne(car_no);
+       return car;
     }
 
     @Override
@@ -62,16 +62,15 @@ public class CarServiceImpl implements CarService {
     
     @Override
     public List<Car> searchAvailableCars(LocalDate startDate, LocalDate endDate) {
-    	System.out.println(startDate + " ~ " + endDate);
         List<Car> availableCars = carRepository.findAvailableCars(Date.valueOf(startDate), Date.valueOf(endDate));
-        for (Car car : availableCars) {
-			System.out.println(car);
-		}
         return availableCars;
     }
-
+    
     @Override
     public void deleteCar(long carNo) {
         carRepository.delete(carNo);
     }
+    
+    
+    
 }
