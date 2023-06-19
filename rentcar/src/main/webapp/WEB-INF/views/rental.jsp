@@ -54,7 +54,7 @@
             <th scope="col">Model</th>
             <th scope="col">Model Year</th>
             <th scope="col">Price</th>        
- 			<th scope="col">     </th>
+ 			<th scope="col">     </th>	
         </tr>
     </thead>
     <tbody>
@@ -67,11 +67,17 @@
                 <td>
                     <img src="${pageContext.request.contextPath}/static/images/${car.imgpath}" class="car-image">
                 </td>        
+                <td> <button onclick="rentCar(${car.car_no})">대여</button></td> 
             </tr>
         </c:forEach>
     </tbody>
 </table>
 <br>
+<script>
+        function rentCar(carNo) {
+                location.href = "/web/rental/rentCar?carNo=" + carNo;
+        }
+</script>
 
 </body>
 </html>
