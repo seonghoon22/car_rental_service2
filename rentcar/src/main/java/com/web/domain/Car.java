@@ -48,12 +48,9 @@ public class Car {
 	public Car() {
 		super();
 	}
-	
 	public MultipartFile getFile() {
 	      return file;
 	   }
-
-
 	public void setFile(MultipartFile file) {
 	    this.file = file;
 	}

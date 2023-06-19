@@ -1,9 +1,11 @@
 package com.web.domain;
 
 
+
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -45,10 +47,7 @@ public class Rental {
 	 	@Column(name = "end_date", columnDefinition = "DATE", nullable = false)
 	    private Date endDate;
 	 	
-	 	@Column(nullable = false)
-	    private int endTime;
-	 	
-	 	@ManyToOne
+	 	@ManyToOne(cascade = CascadeType.REMOVE)
 	    @JoinColumn(name = "car_no", insertable = false, updatable = false)
 	    private Car car;
 	    
@@ -56,7 +55,9 @@ public class Rental {
 	        super();
 	    }
 
-	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, Date startDate, int startTime, Date endDate, int endTime) {
+
+	    public Rental(Long rental_no, Long car_no, String id, int totalCost, int rentalPeriod, Date startDate, int startTime, Date endDate) {
+
 	    	this.rental_no = rental_no;
 	        this.car_no = car_no;
 	        this.id = id;
@@ -65,7 +66,6 @@ public class Rental {
 	        this.startDate = startDate;
 	        this.startTime = startTime;
 	        this.endDate = endDate;
-	        this.endTime = endTime;
 	    }
 
 }

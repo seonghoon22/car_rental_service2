@@ -33,7 +33,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car getCarByCar_no(Long car_no) {
-    	Car car =carRepository.findOne(car_no);
+       Car car =carRepository.findOne(car_no);
        return car;
     }
 
@@ -63,14 +63,15 @@ public class CarServiceImpl implements CarService {
     
     @Override
     public List<Car> searchAvailableCars(LocalDate startDate, LocalDate endDate) {
-
-    	System.out.println(startDate + " ~ " + endDate);
         List<Car> availableCars = carRepository.findAvailableCars(Date.valueOf(startDate), Date.valueOf(endDate));
         return availableCars;
     }
-
+    
     @Override
     public void deleteCar(long carNo) {
         carRepository.delete(carNo);
     }
+    
+    
+    
 }
