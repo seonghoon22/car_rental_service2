@@ -16,11 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "Car")
 @Getter
 @Setter
+@ToString
 public class Car {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

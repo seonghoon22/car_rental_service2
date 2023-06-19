@@ -3,6 +3,7 @@ package com.web.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -61,7 +62,11 @@ public class CarServiceImpl implements CarService {
     
     @Override
     public List<Car> searchAvailableCars(LocalDate startDate, LocalDate endDate) {
-        List<Car> availableCars = carRepository.findAvailableCars(startDate, endDate);
+    	System.out.println(startDate + " ~ " + endDate);
+        List<Car> availableCars = carRepository.findAvailableCars(Date.valueOf(startDate), Date.valueOf(endDate));
+        for (Car car : availableCars) {
+			System.out.println(car);
+		}
         return availableCars;
     }
 

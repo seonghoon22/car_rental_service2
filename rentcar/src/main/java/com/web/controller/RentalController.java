@@ -37,7 +37,6 @@ public class RentalController {
 	@ResponseBody
 	public String searchAvailable(@RequestParam("startDate") String startDateString,
             @RequestParam("endDate") String endDateString, Model model) {
-		
 	    LocalDate startDate = LocalDate.parse(startDateString);
 	    LocalDate endDate = LocalDate.parse(endDateString);
 		List<Car> cars = carServiceImpl.searchAvailableCars(startDate, endDate);
