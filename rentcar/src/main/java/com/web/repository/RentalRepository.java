@@ -8,4 +8,4 @@ import com.web.domain.*;
 
 @Repository
 public interface RentalRepository extends JpaRepository<Rental, Long>{
-}
+} 

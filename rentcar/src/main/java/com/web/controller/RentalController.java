@@ -65,6 +65,7 @@ public class RentalController {
 	         return "rental";
 	      }
 	   }
+
 	
 		
 	
@@ -74,6 +75,7 @@ public class RentalController {
 		return "rental";
 	}
 	
+
 	   @GetMapping("/rental/rentCar")
 	    public String rentCar(@RequestParam("carNo") long carNo, String startDateString,
 	            String endDateString, Model model) {
