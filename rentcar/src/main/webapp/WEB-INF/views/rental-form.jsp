@@ -8,20 +8,28 @@
 </head>
 <body>
 	<table>
-        <tr>
-            <th>Car No</th>
-            <th>Model</th>
-            <th>Model Year</th>
-            <th>Price</th>        
+    <thead class="thead-dark">
+       <tr>
+            <th scope="col">Car No</th>
+            <th scope="col">Model</th>
+            <th scope="col">Model Year</th>
+            <th scope="col">Price</th>        
+          <th scope="col">     </th>
         </tr>
+    </thead>
+    <tbody>
+        <c:forEach items="${rent}" var="rent">
             <tr>
-                <td>${cars.car_no}</td>
-                <td>${cars.model}</td>
-                <td>${cars.model_year}</td>
-                <td>${cars.price}</td>
-                <td><img src="static/images/${car.imgpath}" ></td>        
+                <td>${rent.car_no}</td>
+                <td>${rent.model}</td>
+                <td>${rent.model_year}</td>
+                <td>${rent.startDate}</td>
+                <td>${rent.startTime}</td>
+                <td>${rent.endDate}</td>
+                <td>${rent.rentalPeriod}</td>
+                <td>${rent.totalCost}</td>                                        
             </tr>
-
-    </table>
+        </c:forEach>
+    </tbody>
 </body>
 </html>

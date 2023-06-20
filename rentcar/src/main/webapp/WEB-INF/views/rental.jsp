@@ -43,20 +43,6 @@
     <label for="endDate">대여 종료일</label>
     <input type="date" id="endDate" name="endDate" required>
     <label for="endTime">대여 종료시간</label>
-    <select id="endTime" name="endTime" required>
-        <option value="">시간 선택</option>
-        <option value="8">8시</option>
-        <option value="9">9시</option>
-        <option value="10">10시</option>
-        <option value="11">11시</option>
-        <option value="12">12시</option>
-        <option value="13">13시</option>
-        <option value="14">14시</option>
-        <option value="15">15시</option>
-        <option value="16">16시</option>
-        <option value="17">17시</option>
-        <option value="18">18시</option>
-    </select>
     <br>
     <input type="submit" value="Search">
 </form>
