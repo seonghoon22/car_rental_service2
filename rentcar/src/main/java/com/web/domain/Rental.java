@@ -33,7 +33,7 @@ public class Rental {
 	    private String id;
 	 	
 	 	@Column(nullable = false)
-	 	private int rentalPeriod;
+	 	private long rentalPeriod;
 	 	
 	 	@Column(nullable = false)
 	 	private int totalCost;
@@ -41,12 +41,12 @@ public class Rental {
 	 	@Column(name = "start_date", columnDefinition = "DATE", nullable = false)
 	 	private Date startDate;
 	 	
-	 	@Column(nullable = false)
+	 	@Column(nullable = true)
 	    private int startTime;
 	 	
 	 	@Column(name = "end_date", columnDefinition = "DATE", nullable = false)
 	    private Date endDate;
-	 	
+
 	 	@ManyToOne(cascade = CascadeType.REMOVE)
 	    @JoinColumn(name = "car_no", insertable = false, updatable = false)
 	    private Car car;
@@ -66,6 +66,7 @@ public class Rental {
 	        this.startDate = startDate;
 	        this.startTime = startTime;
 	        this.endDate = endDate;
+
 	    }
 
 }
